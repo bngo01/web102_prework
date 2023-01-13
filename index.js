@@ -44,12 +44,9 @@ function addGamesToPage(games) {
         let image = games[i].img
 
         game.innerHTML = `<img class="game-img" src=${image} />
-        <b><center>${games[i].name}</b></center>
-        <br>
-        Amount pledged: $${games[i].pledged}
-        <br>
-        Amount needed: $${games[i].goal}
-        <br>`
+        <h2>${games[i].name}</h2>
+        <p>${games[i].description}</p>
+        <p>Backers: ${games[i].backers}</p>`
 
         // append the game to the games-container
         gamesContainer.appendChild(game)
@@ -101,12 +98,12 @@ function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have not yet met their goal
-    let underFundedList = GAMES_JSON.filter( game => {
+    let unfundedList = GAMES_JSON.filter(game => {
         return game.goal > game.pledged
     })
 
     // use the function we previously created to add the unfunded games to the DOM
-    addGamesToPage(underFundedList)
+    addGamesToPage(unfundedList)
 }
 
 // show only games that are fully funded
@@ -114,7 +111,7 @@ function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
-    let fundedList = GAMES_JSON.filter( game => {
+    let fundedList = GAMES_JSON.filter(game => {
         return game.goal <= game.pledged
     })
 
@@ -149,12 +146,18 @@ allBtn.addEventListener("click", showAllGames)
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+let unfundedTotal = GAMES_JSON.filter(game => {
+    return game.goal > game.pledged
+}).length
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+let unfundedStr = `A total of $${totalRaised.toLocaleString('en-US')} has been raised for ${GAMES_JSON.length} games.
+${unfundedTotal} ${unfundedTotal == 1 ? "game remains" : "games remain"} unfunded. We need your help to fund these amazing games!`
 
 // create a new DOM element containing the template string and append it to the description container
+let descriptionStr = document.createElement("p")
+descriptionStr.innerHTML = unfundedStr
+descriptionContainer.appendChild(descriptionStr)
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
