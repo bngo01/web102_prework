@@ -30,7 +30,7 @@ function addGamesToPage(games) {
 
     // loop over each item in the data
     let i = 0
-    for (i; i < games.length(); i++){
+    for (i; i < games.length; i++){
         // create a new div element, which will become the game card
         let game = document.createElement("div")
 
@@ -43,7 +43,7 @@ function addGamesToPage(games) {
         // between the end of the src attribute and the end of the tag ("/>")
         let image = games[i].img
 
-        game.innerHTML = `<img class="game-img src=${image}"/>
+        game.innerHTML = `<img class="game-img" src=${image} />
         <b><center>${games[i].name}</b></center>
         <br>
         Amount pledged: $${games[i].pledged}
@@ -70,20 +70,26 @@ addGamesToPage(GAMES_JSON)
 const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
-
+let totalBackers = GAMES_JSON.reduce((acc, game) => {
+    return acc + game.backers
+}, 0)
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-
+contributionsCard.innerHTML = `${totalBackers.toLocaleString("en-US")}`
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
+let totalRaised = GAMES_JSON.reduce((acc, game) => {
+    return acc + game.pledged
+}, 0)
 
 // set inner HTML using template literal
-
+raisedCard.innerHTML = `${totalRaised.toLocaleString("en-US")}`
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-
+const gamesNum = GAMES_JSON.length
+gamesCard.innerHTML = gamesNum
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
