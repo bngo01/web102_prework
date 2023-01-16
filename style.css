@@ -48,6 +48,10 @@ body {
     justify-content: space-around;
 }
 
+#games-container img:hover {
+    transform:scale(1.2);
+}
+
 .game-img {
     width: 100%;
     border-radius: 5px;
