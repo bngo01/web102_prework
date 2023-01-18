@@ -26,11 +26,14 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-(https://youtu.be/YHtrD1wUv2U, WEB102 Prework Walkthrough)
+https://www.youtube.com/watch?v=YHtrD1wUv2U
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+- I wasn't too familiar with some of the built-in JavaScript array methods like filter() and reduce(). It took me a big longer to really understand what it does. I looked at the examples provided and some examples online to get more comfortable with it.
+- The biggest challenge I had was learning and familizing myself with new CSS style tags to make give the page a different look and feel for easier visualization. 
+- Overall, I didn't have too much trouble working on this web app. It just took some memory refreshing because I've done most of this before.
 
 ## License
 
