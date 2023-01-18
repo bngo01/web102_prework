@@ -33,6 +33,7 @@ https://www.youtube.com/watch?v=YHtrD1wUv2U
 Describe any challenges encountered while building the app.
 - I wasn't too familiar with some of the built-in JavaScript array methods like filter() and reduce(). It took me a big longer to really understand what it does. I looked at the examples provided and some examples online to get more comfortable with it.
 - The biggest challenge I had was learning and familizing myself with new CSS style tags to make give the page a different look and feel for easier visualization. 
+- Creating the GIF also took some time. I kept going over the 10MB file size.
 - Overall, I didn't have too much trouble working on this web app. However, it took some memory refreshing because I've done most of this before.
 
 ## License
