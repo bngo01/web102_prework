@@ -25,8 +25,7 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-
-<img src='https://youtu.be/YHtrD1wUv2U' title='Video Walkthrough' width=75% alt='Video Walkthrough' />
+https://youtu.be/YHtrD1wUv2U
 
 ## Notes
 
